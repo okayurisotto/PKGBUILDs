@@ -1,0 +1,28 @@
+# Maintainer: okayurisotto <47853651+okayurisotto@users.noreply.github.com>
+pkgname=ttf-klee-one-git
+pkgver=r10.8b05327
+pkgrel=1
+pkgdesc='A script font handwritten by pencil or pen.'
+arch=('any')
+url='https://github.com/fontworks-fonts/Klee'
+license=('custom:ofl')
+makedepends=('git')
+source=("git+${url}.git")
+md5sums=('SKIP')
+
+pkgver() {
+	cd "${srcdir}/Klee"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+	cd "${srcdir}/Klee"
+
+	install \
+		-Dm644 \
+		'fonts/ttf/KleeOne-Regular.ttf' \
+		'fonts/ttf/KleeOne-SemiBold.ttf' \
+		-t "${pkgdir}/usr/share/fonts/TTF"
+
+	install -Dm644 'OFL.txt' -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}

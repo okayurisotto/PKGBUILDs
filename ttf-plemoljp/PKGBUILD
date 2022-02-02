@@ -1,0 +1,25 @@
+# Maintainer: okayurisotto <47853651+okayurisotto@users.noreply.github.com>
+pkgname=ttf-plemoljp
+pkgver=1.2.3
+pkgrel=1
+pkgdesc='A composite font of IBM Plex Mono and IBM Plex Sans JP.'
+arch=('any')
+url='https://github.com/yuru7/PlemolJP'
+license=('custom')
+source=("${url}/releases/download/v${pkgver}/PlemolJP_HS_v${pkgver}.zip"
+        "${url}/releases/download/v${pkgver}/PlemolJP_NF_v${pkgver}.zip"
+        "${url}/releases/download/v${pkgver}/PlemolJP_v${pkgver}.zip"
+        "https://raw.githubusercontent.com/yuru7/PlemolJP/v${pkgver}/LICENSE.txt")
+sha256sums=('92afa36ecc6805e0ba83f101d930d8f311055507e442b2cd84cc295c56b3a61c'
+            '0b867d357f1b81f0bcf0713a8ffedbe611d5268da503588c9ed18288af00b5a6'
+            '79c8ec815f22e9f518f1c424dff55742cb4bd7603151115bf6f75469957a07d5'
+            '75b08fcabe18769aac61b51089fdbadc4e3536b25748122d13f44c4d117f3c25')
+
+package() {
+	find "${srcdir}" \
+		-type f \
+		-name '*.ttf' \
+		-exec install -Dm644 {} -t "${pkgdir}/usr/share/fonts/TTF" \;
+
+	install -Dm644 "${srcdir}/LICENSE.txt" -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}

@@ -1,0 +1,26 @@
+# Maintainer: okayurisotto <47853651+okayurisotto@users.noreply.github.com>
+pkgname=ttf-hackgen
+pkgver=2.5.3
+pkgrel=1
+pkgdesc='A composite font of Hack and GenJyuu-Gothic.'
+arch=('any')
+url='https://github.com/yuru7/HackGen'
+license=('custom')
+source=("${url}/releases/download/v${pkgver}/HackGenNerd_v${pkgver}.zip"
+        "${url}/releases/download/v${pkgver}/HackGen_v${pkgver}.zip"
+        "https://raw.githubusercontent.com/yuru7/HackGen/v${pkgver}/LICENSE.txt")
+sha256sums=('c9393f54bc7704c315b8293244738d014e8b6149090537348b8550d1ef1be254'
+            'bc625470d74f497ebdcede081f9ead21655b52ef224569f4b9258ee4dddffe78'
+            '8ac2fc3472cd8c8c988bbd047a9739f528f614a3e61ff0925e26d2e76e53301d')
+
+package() {
+	cd "${srcdir}"
+
+	install \
+		-Dm644 \
+		HackGenNerd_v${pkgver}/*.ttf \
+		HackGen_v${pkgver}/*.ttf \
+		-t "${pkgdir}/usr/share/fonts/TTF"
+
+	install -Dm644 "${srcdir}/LICENSE.txt" -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}
