@@ -1,11 +1,12 @@
 # Maintainer: okayurisotto <47853651+okayurisotto@users.noreply.github.com>
 pkgname=ttf-plemoljp
 pkgver=1.2.3
-pkgrel=1
+pkgrel=2
 pkgdesc='A composite font of IBM Plex Mono and IBM Plex Sans JP.'
 arch=('any')
 url='https://github.com/yuru7/PlemolJP'
 license=('custom')
+provides=('ttf-font-nerd')
 source=("${url}/releases/download/v${pkgver}/PlemolJP_HS_v${pkgver}.zip"
         "${url}/releases/download/v${pkgver}/PlemolJP_NF_v${pkgver}.zip"
         "${url}/releases/download/v${pkgver}/PlemolJP_v${pkgver}.zip"
