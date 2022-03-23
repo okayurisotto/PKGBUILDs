@@ -1,11 +1,12 @@
 # Maintainer: okayurisotto <47853651+okayurisotto@users.noreply.github.com>
 pkgname=ttf-hackgen
 pkgver=2.5.3
-pkgrel=1
+pkgrel=2
 pkgdesc='A composite font of Hack and GenJyuu-Gothic.'
 arch=('any')
 url='https://github.com/yuru7/HackGen'
 license=('custom')
+provides=('ttf-font-nerd')
 source=("${url}/releases/download/v${pkgver}/HackGenNerd_v${pkgver}.zip"
         "${url}/releases/download/v${pkgver}/HackGen_v${pkgver}.zip"
         "https://raw.githubusercontent.com/yuru7/HackGen/v${pkgver}/LICENSE.txt")
