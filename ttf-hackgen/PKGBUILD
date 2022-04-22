@@ -1,6 +1,6 @@
 # Maintainer: okayurisotto <47853651+okayurisotto@users.noreply.github.com>
 pkgname=ttf-hackgen
-pkgver=2.5.3
+pkgver=2.6.3
 pkgrel=2
 pkgdesc='A composite font of Hack and GenJyuu-Gothic.'
 arch=('any')
@@ -9,10 +9,10 @@ license=('custom')
 provides=('ttf-font-nerd')
 source=("${url}/releases/download/v${pkgver}/HackGenNerd_v${pkgver}.zip"
         "${url}/releases/download/v${pkgver}/HackGen_v${pkgver}.zip"
-        "https://raw.githubusercontent.com/yuru7/HackGen/v${pkgver}/LICENSE.txt")
-sha256sums=('c9393f54bc7704c315b8293244738d014e8b6149090537348b8550d1ef1be254'
-            'bc625470d74f497ebdcede081f9ead21655b52ef224569f4b9258ee4dddffe78'
-            '8ac2fc3472cd8c8c988bbd047a9739f528f614a3e61ff0925e26d2e76e53301d')
+        "https://raw.githubusercontent.com/yuru7/HackGen/v${pkgver}/LICENSE")
+sha256sums=('3120f82ac2a7b742acd863425c080031d7cd8f5716403ea582adc4b5193bf691'
+            '2b1c751abe318c44e2a3b22137fa31c18765a1c4e07962a8d1e05e7d5908241a'
+            '9bfc3b3826a9c71042b87fda90a19cda4918894cdbd449cab163b7a7c93c5aa7')
 
 package() {
 	cd "${srcdir}"
@@ -23,5 +23,5 @@ package() {
 		HackGen_v${pkgver}/*.ttf \
 		-t "${pkgdir}/usr/share/fonts/TTF"
 
-	install -Dm644 "${srcdir}/LICENSE.txt" -t "${pkgdir}/usr/share/licenses/${pkgname}"
+	install -Dm644 "${srcdir}/LICENSE" -t "${pkgdir}/usr/share/licenses/${pkgname}"
 }
