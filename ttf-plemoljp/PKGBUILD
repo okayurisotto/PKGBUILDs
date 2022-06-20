@@ -1,7 +1,7 @@
 # Maintainer: okayurisotto <47853651+okayurisotto@users.noreply.github.com>
 pkgname=ttf-plemoljp
-pkgver=1.2.4
-pkgrel=2
+pkgver=1.2.5
+pkgrel=1
 pkgdesc='A composite font of IBM Plex Mono and IBM Plex Sans JP.'
 arch=('any')
 url='https://github.com/yuru7/PlemolJP'
@@ -12,9 +12,9 @@ source=("${url}/releases/download/v${pkgver}/PlemolJP_HS_v${pkgver}.zip"
         "${url}/releases/download/v${pkgver}/PlemolJP_NF_v${pkgver}.zip"
         "${url}/releases/download/v${pkgver}/PlemolJP_v${pkgver}.zip"
         "https://raw.githubusercontent.com/yuru7/PlemolJP/v${pkgver}/LICENSE")
-sha256sums=('e2399754b087409fe8d4f6ceeeb8bb1d68c835ba88347899fd695b59cf1c1e12'
-            '55cb3609dc7fc0afa15d8701451dcb0c2e687d64a955e687d874647248d4029f'
-            'a960536fffe1b5c7bc4aeb416fd82161ee4822b3b5f69525af9abbdb652df8c9'
+sha256sums=('31901129157dac2f96f3be415980be5194a1d802e882688bf6aca64b52bd0385'
+            '16edc7c760211e91889bb22349080ea91ed96c7d7aa2920c727e9b2cf81ccd2e'
+            '96d5cc0e687450e91aa25c6d29fceaa2bff935e454f9a7f468780699ed57fd23'
             '52bbb5e729acc62435831d20641ece6a919e610100285ba183ef4d7233fb1e9a')
 
 package() {
